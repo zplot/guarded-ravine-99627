@@ -1041,7 +1041,7 @@ function lsShowNotice(lsobj,issue,ver){
 					if( typeof $(this).data('src') !== 'string' ){
 
 						$(this).data('src', $(this).attr('src') );
-						var src = ls.o.skinsPath+'assets/images//blank.gif';
+						var src = '/assets/images//blank.gif';
 						$(this).attr('src',src);
 					}
 				}else{
