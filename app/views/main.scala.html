@@ -1,0 +1,277 @@
+@(title: String)(content: Html)
+
+
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+
+<!-- Typekit fonts
+================================================== -->
+    <script src="https://use.typekit.net/cju7woz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<!-- Basic Page Needs
+================================================== -->
+<meta charset="utf-8">
+<title>@title</title>
+
+<!-- Mobile Specific
+================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+================================================== -->
+	<link rel="stylesheet" type="text/css" href='@routes.Assets.at("stylesheets/style.css")'>
+	<link rel="stylesheet" type="text/css" href='@routes.Assets.at("stylesheets/boxed.css")'>
+	<link rel="stylesheet" type="text/css" href='@routes.Assets.at("stylesheets/colors/green.css")'>
+    <link rel="stylesheet" type="text/css" href='@routes.Assets.at("stylesheets/custom.css")'>
+
+
+<!-- Java Script
+================================================== -->
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src='@routes.Assets.at("javascripts/custom.js")'></script>
+	<script src='@routes.Assets.at("javascripts/selectnav.js")'></script>
+	<script src='@routes.Assets.at("javascripts/flexslider.js")'></script>
+	<script src='@routes.Assets.at("javascripts/twitter.js")'></script>
+	<script src='@routes.Assets.at("javascripts/tooltip.js")'></script>
+	<script src='@routes.Assets.at("javascripts/effects.js")'></script>
+	<script src='@routes.Assets.at("javascripts/fancybox.js")'></script>
+	<script src='@routes.Assets.at("javascripts/carousel.js")'></script>
+	<script src='@routes.Assets.at("javascripts/isotope.js")'></script>
+	<script src='@routes.Assets.at("javascripts/jquery-easing-1.3.js")'></script>
+	<script src='@routes.Assets.at("javascripts/jquery-transit-modified.js")'></script>
+	<script src='@routes.Assets.at("javascripts/layerslider.transitions.js")'></script>
+	<script src='@routes.Assets.at("javascripts/layerslider.kreaturamedia.jquery.js")'></script>
+	<script src='@routes.Assets.at("javascripts/greensock.js")'></script>
+
+
+        <!-- MathJax Script
+================================================== -->
+
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+    <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+
+
+</head>
+<body>
+
+<!-- Wrapper Start -->
+<div id="wrapper">
+
+
+    @headernav()
+
+        <!-- Content
+================================================== -->
+
+        <!-- LayerSlider Container -->
+    <div class="layerslider-container">
+
+    @content
+
+
+
+
+
+
+
+    </div>
+        <!-- LayerSlider Container / End -->
+
+
+        <!-- Featured Boxes
+================================================== -->
+        <!-- Container -->
+    <div class="container">
+        <div class="featured-boxes homepage">
+
+            <div class="one-third column">
+
+                    <!-- Featured Box -->
+                <div class="featured-box">
+                    <div class="circle"><i class="fa fa-paint-brush"></i><span></span></div>
+                    <div class="featured-desc">
+                        <h3>Algebra</h3>
+                        <p>The main topic of this web is Algebra. Group and Ring theory, Group Rings, Hopf algebras are our main interests. </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="one-third column">
+
+                    <!-- Featured Box -->
+                <div class="featured-box">
+                    <div class="circle"><i class="fa fa-cogs"></i><span></span></div>
+                    <div class="featured-desc">
+                        <h3>Functional Scala</h3>
+                        <p>Our programming language is Scala. The code is developed in pure functional style. For math expressions MathJax is used.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="one-third column">
+
+                    <!-- Featured Box -->
+                <div class="featured-box homepage">
+                    <div class="circle"><i class="fa fa-magic"></i></i><span></span></div>
+                    <div class="featured-desc">
+                        <h3>Other interests</h3>
+                        <p>Occasionally, other interests will be shown in our site. Philosophy, Photography or even wine tasting may appear in it. </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+        <!-- Container / End -->
+
+
+        <!-- Testimonials -->
+    <div id="testimonials">
+            <!-- Slider -->
+        <div class="container">
+            <div class="sixteen columns">
+                <div class="testimonials-slider">
+                    <ul class="slides">
+                        <li>
+                            <p>Physics is becoming too difficult for the physicists.
+
+                                <span>David Hilbert</span></p>
+                        </li>
+                        <li>
+                            <p>It is not knowledge, but the act of learning, which grants the greatest enjoyment.
+
+
+                                <span>Carl Friedrich Gauss</span></p>
+                        </li>
+
+                        <li>
+                            <p>If I were to awaken after having slept for a thousand years, my first question would be: Has the Riemann hypothesis been proven?
+
+                                <span>David Hilbert</span></p>
+                        </li>
+
+                        <li>
+                            <p>In formal logic, a contradiction is the signal of defeat, but in the evolution of real knowledge it marks the first step in progress toward a victory.
+
+                                <span>Alfred North Whitehead</span></p>
+                        </li>
+                        <li>
+                            <p>Not ignorance, but ignorance of ignorance, is the death of knowledge.
+
+                                <span>Alfred North Whitehead</span></p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- 960 Container -->
+    <div class="container">
+
+        <div class="sixteen columns">
+                <!-- Headline -->
+            <div class="headline no-margin"><h3>Areas of interest</h3></div>
+        </div>
+
+            <!-- Project -->
+        <div class="four columns">
+            <div class="picture">
+                <a href="#"><img src='@routes.Assets.at("images/portfolio/hopf.png")' alt=""/><div class="image-overlay-link"></div></a>
+            </div>
+            <div class="item-description">
+                <h5><a href="#">Hopf algebras</a></h5>
+                <p>Mauris sit amet ligula est, eget conseact etur lectus maecenas hendrerit suscipit.</p>
+            </div>
+        </div>
+
+            <!-- Project -->
+        <div class="four columns">
+            <div class="picture"><a href='@routes.Assets.at("images/portfolio/portoflio-01-large.jpg")' rel="image" title="Coffee Time"><img src='@routes.Assets.at("images/portfolio/zfc.png")' alt=""/><div class="image-overlay-zoom"></div></a></div>
+            <div class="item-description">
+                <h5><a href="#">Choice Axiom</a></h5>
+                <p>Amet sit lorem ligula est, eget conseact etur lectus hendrerit suscipit maecenas.</p>
+            </div>
+        </div>
+
+            <!-- Project -->
+        <div class="four columns">
+            <div class="picture"><a href="single_project.html"><img src='@routes.Assets.at("images/portfolio/groupring.png")' alt=""/><div class="image-overlay-link"></div></a></div>
+            <div class="item-description">
+                <h5><a href="#">Units in Group Rings</a></h5>
+                <p>Lorem sit amet ligula est, eget conseact etur lectus maecenas hendrerit suscipit.</p>
+            </div>
+        </div>
+
+            <!-- Project -->
+        <div class="four columns">
+            <div class="picture"><a href="single_project.html"><img src='@routes.Assets.at("images/portfolio/hasse.png")' alt=""/><div class="image-overlay-link"></div></a></div>
+            <div class="item-description">
+                <h5><a href="#">Finite topologies</a></h5>
+                <p>Ligula mauris sit amet est eget consat etur lectus maecenas hendrerit suscipit.</p>
+            </div>
+        </div>
+
+    </div>
+        <!-- 960 Container / End -->
+
+
+        <!-- 960 Container -->
+    <div class="container">
+        <div class="sixteen columns">
+
+                <!-- Headline -->
+            <div class="headline no-margin"><h3>More Algebra</h3></div>
+
+            <ul class="client-list">
+                <li><img src='@routes.Assets.at("images/logo-01.png")' alt=""/></li>
+                <li><img src='@routes.Assets.at("images/logo-02.png")' alt=""/></li>
+                <li><img src='@routes.Assets.at("images/logo-03.png")' alt=""/></li>
+                <li><img src='@routes.Assets.at("images/logo-04.png")' alt=""/></li>
+                <li><img src='@routes.Assets.at("images/logo-05.png")' alt=""/></li>
+            </ul>
+
+        </div>
+    </div>
+
+        <!-- 960 Container / End -->
+        <!-- Infobox -->
+    <div class="infobox">
+        <div class="container">
+            <div class="sixteen columns">Start learning algebra and functional programming <a href="my-account.html">Go!</a></div>
+        </div>
+    </div>
+
+</div>
+        <!-- Wrapper / End -->
+
+
+        <!-- Footer
+================================================== -->
+
+        <!-- Footer Start -->
+    @footer1()
+        <!-- Footer / End -->
+
+
+
+
+
+</body>
+</html>

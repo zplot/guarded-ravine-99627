@@ -1,0 +1,96 @@
+.university {
+
+    font: 20px "Adobe Garamond Pro", "Times New Roman" !important;
+    color: #ffeafb !important;
+    font-weight: normal !important;;
+    font-style: normal !important;;
+    padding-bottom: 10px !important;
+    line-height: 20px !important;
+}
+
+.fields {
+
+    font: 18px "Adobe Garamond Pro", "Times New Roman" !important;
+    color: #fff2fc !important;
+    font-weight: normal !important;;
+    font-style: normal !important;;
+    padding-bottom: 10px !important;
+    line-height: 20px !important;
+}
+
+.mathquote {
+
+    font: 20px "Adobe Garamond Pro", "Times New Roman" !important;
+    color: #ffedfb !important;
+    font-weight: normal !important;;
+    font-style: italic !important;;
+    padding-top: 40px !important;
+    padding-bottom: 10px !important;
+    line-height: 28px !important;
+
+}
+
+.mathonblackboard {
+
+    font: 13px "Open Sans", sans-serif !important;
+    color: #a6d7ff !important;
+    font-weight: normal !important;;
+    font-style: italic !important;;
+    line-height: 15px !important;
+    padding-bottom: 0px !important;
+    padding-top: 4px !important;
+
+}
+
+.class1 {
+
+    font: 13px "Open Sans", sans-serif !important;
+    /*color: #a6d7ff !important;*/
+    color: #bbb !important;
+    font-weight: normal !important;;
+    font-style: italic !important;;
+    line-height: 15px !important;
+    padding-bottom: 0px !important;
+    padding-top: 4px !important;
+
+}
+
+.class2 {
+
+    font: 15px "Open Sans", sans-serif !important;
+    /*color: #a6d7ff !important;*/
+    color: #bbb !important;
+    font-weight: normal !important;;
+    font-style: italic !important;;
+    line-height: 15px !important;
+    padding-bottom: 0px !important;
+    padding-top: 4px !important;
+
+}
+
+.noclass {
+
+}
+
+.outputtable {
+
+    font: 11px "Open Sans", sans-serif !important;
+    color: #ffffff !important;
+    font-weight: normal !important;;
+    font-style: italic !important;;
+    line-height: 11px !important;
+    padding-bottom: 0px !important;
+    padding-top: 4px !important;
+
+
+}
+
+.outputtd {
+
+    text-align: center !important;
+    padding: 2px !important;
+
+}
+
+tr:nth-child(even){background-color: #333333 !important;}
+
