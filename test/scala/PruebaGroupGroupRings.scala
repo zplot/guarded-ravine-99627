@@ -26,13 +26,13 @@ object PruebaGroupGroupRings extends App {
   val grupito = S(3)
   val anillo = Zn(6)
 
-  val example = GroupRing2(grupito, anillo)
+  val example = GroupRing(grupito, anillo)
 
-  val S3Zn6 = GroupRing2(grupito, anillo)
+  val S3Zn6 = GroupRing(grupito, anillo)
 
   val otroGrupo = S(4)
 
-  val S4S3Zn6 = GroupRing2(otroGrupo, S3Zn6)
+  val S4S3Zn6 = GroupRing(otroGrupo, S3Zn6)
 
   println(S3Zn6)
   println(S4S3Zn6)

@@ -1,11 +1,10 @@
 package models.algebra
 
-case class GroupRing(group: FiniteGroup, ring:Ring ) {
+case class GroupRing(group: FiniteGroup, ring:Ring ) extends Ring {
 
   type T1 = Vector[ring.T2]
   type T2 = GroupRingElement
-
-
+  override val structureId: String = group.structureId + ring.structureId
   val dim = group.cardinal
 
   val rngZero: this.ring.T2 = ring.zero
@@ -27,9 +26,11 @@ case class GroupRing(group: FiniteGroup, ring:Ring ) {
   // Orden de los elementos del grupo. El 1 es el 1º
   val ord = orderList.toIndexedSeq
 
-  case class GroupRingElement(vector: Vector[ring.T2]) {
+  case class GroupRingElement(vector: Vector[ring.T2]) extends RingElement {
 
     val fatherGroupRing = GroupRing.this
+    override val elementId: String = vector.toString()
+    override val isZero: Boolean = false // TODO
 
     def add(other: GroupRingElement) = {
       def recursiveAdd(vector1: Vector[ring.T2], vector2: Vector[ring.T2]): Vector[ring.T2] = {
@@ -52,6 +53,7 @@ case class GroupRing(group: FiniteGroup, ring:Ring ) {
       val tmp2 = other
       this.add(other.multiply(rngMinusOne))
     }
+    override def negate = ??? // TODO
 
     def multiply(other: GroupRingElement) = {
       // Se come las coordenadas y devuelve la coordenada correspondiente a la multiplicación
@@ -80,10 +82,10 @@ case class GroupRing(group: FiniteGroup, ring:Ring ) {
       this.multiply(tmp)
     }
 
-    def *(other: T2) = this.multiply(other)
+    override def *(other: T2) = this.multiply(other)
     def *(other: ring.T2) = this.multiply(other)
-    def +(other: T2) = this.add(other)
-    def -(other: T2) = this.minus(other)
+    override def +(other: T2) = this.add(other)
+    override def -(other: T2) = this.minus(other)
 
     override def toString = this.vector.toString() + "\n" + ord.toString() + "\n"
   }
