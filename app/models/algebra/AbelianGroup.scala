@@ -15,7 +15,7 @@ trait AbelianGroup {
 
   trait AbelianGroupElement {
 
-    val fatherAbelianGroup = AbelianGroup.this
+    val fatherAbelianGroup: AbelianGroup = AbelianGroup.this
     val isZero: Boolean
 
     def negate: T2
