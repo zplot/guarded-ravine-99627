@@ -10,7 +10,7 @@ trait AbelianGroup2 extends Group2 {
   implicit def conv(x: AbelianGroup2Element): T2 = x.asInstanceOf[T2]
 
 
-  val operation: (T2, T2) => T2 = binop
+  val groupOp: (T2, T2) => T2 = binop
 
   def builder(x: T1): T2
 
@@ -27,7 +27,7 @@ trait AbelianGroup2 extends Group2 {
 
     def negate: T2
 
-    def add(other: T2): T2 = operation(this, other)
+    def add(other: T2): T2 = groupOp(this, other)
 
 
 
