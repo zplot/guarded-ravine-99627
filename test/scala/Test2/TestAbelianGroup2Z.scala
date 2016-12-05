@@ -32,14 +32,8 @@ object TestAbelianGroup2Z extends App {
 
       override def inverse = ZPlusInteger(- this.value)
 
-
-
     }
-
-
   }
-
-
 
   val a: ZPlus.ZPlusInteger = ZPlus.ZPlusInteger(2)
   val b: ZPlus.ZPlusInteger = ZPlus.ZPlusInteger(3)
