@@ -22,8 +22,7 @@ trait Semigroup2 {
 
     val fatherSemigroup: Semigroup2 = Semigroup2.this
 
-    def multiply(other: T2): T2 = binop(this, other)
-    def *(other: T2): T2 = multiply(other)
+    def operation(other: T2): T2 = binop(this, other)
 
   }
 }

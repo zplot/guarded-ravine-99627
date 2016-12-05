@@ -29,6 +29,8 @@ trait AbelianGroup2 extends Group2 {
 
     def add(other: T2): T2 = operation(this, other)
 
+
+
     def +(other: T2): T2 = this.add(other)
     def minus(other: T2): T2 = binop(this, other.negate)
     def -(other: T2): T2 = this.minus(other)

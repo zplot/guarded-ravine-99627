@@ -13,7 +13,7 @@ trait Group2 extends Monoid2 {
   override def toString: String = structureId
 
   def commutator(g: T2, h: T2): T2 = {
-    g.multiply(h.multiply(g.inverse.multiply(h.inverse)))
+    g.operation(h.operation(g.inverse.operation(h.inverse)))
   }
 
   def generatedSet(generators: Set[T2]): Set[T2] = {
@@ -22,7 +22,7 @@ trait Group2 extends Monoid2 {
         for {
           g <- listaAnterior
           s <- generators
-        } yield g.multiply(s)
+        } yield g.operation(s)
       if (listaAnterior != listaNueva) {
         loop(listaNueva ++ listaAnterior, generators)
       } else {
