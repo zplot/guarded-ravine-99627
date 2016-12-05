@@ -9,7 +9,7 @@ object TestSemigroup2 extends App {
     type T1 = Int
     type T2 = SGElement
 
-    override val binop: (SGElement, SGElement) => SGElement = (x, y) => x.suma(y)
+    override val binop: (SGElement, SGElement) => SGElement = (x, y) => x.producto(y)
 
     override def builder(x: T1): SGElement = SGElement(x)
 
@@ -17,7 +17,7 @@ object TestSemigroup2 extends App {
 
     case class SGElement(valor: Int) extends Semigroup2Element {
 
-      def suma(other: SGElement): SGElement = SGElement(this.valor + other.valor)
+      def producto(other: SGElement): SGElement = SGElement(this.valor + other.valor)
     }
 
 
@@ -28,7 +28,7 @@ object TestSemigroup2 extends App {
   val a: SG.SGElement = SG.SGElement(2)
   val b: SG.SGElement = SG.SGElement(3)
   val c: SG.SGElement = a.operation(b)
-  val d: SG.SGElement = a.suma(b)
+  val d: SG.SGElement = a.producto(b)
 
   println(a)
   println(b)
