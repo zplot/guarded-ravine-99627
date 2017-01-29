@@ -10,18 +10,18 @@ case class Fp(p: Int) extends Field {
 
   def builder(x: T1): T2 = FpElement(x)
 
-  val identity = builder(1) // TODO conviven identity con one?
+  val identity: FpElement = builder(1) // TODO conviven identity con one?
   val structureId: String = "Fp" + p.toString
   val finite: Boolean = true
-  val zero = builder(0)
+  val zero: FpElement = builder(0)
 
-  override val one = builder(1)
-  val minusOne = builder(p - 1)
+  override val one: FpElement = builder(1)
+  val minusOne: FpElement = builder(p - 1)
 
   def modulo(x: T1): T1 = if (x < 0) -x else x
 
   private object FpElement {
-    def apply(k: T1) = {
+    def apply(k: T1): FpElement = {
       val v: Int = if (k < 0) {
         (modulo(k) / p + 1) * p + k
       } else {
@@ -32,8 +32,8 @@ case class Fp(p: Int) extends Field {
   }
   class FpElement (val k: T1)  extends FieldElement {
 
-    val elementId = k.toString
-    val fatherFp = Fp.this
+    val elementId: String = k.toString
+    val fatherFp: Fp = Fp.this
     val isZero = k == 0
 
     def add(other: FpElement) = builder((k + other.k) % p)

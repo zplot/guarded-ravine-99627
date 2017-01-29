@@ -54,7 +54,7 @@ class PolynomialsOverFiniteField private(val field: FiniteField) {
 
   }
 
-  def findIrredPolProb(degree: Int) = {
+  def findIrredPolProb(degree: Int): T2 = {
 
     def fromListToT2(list: List[Int]) = {
       val listOfElements = list map ( x => field.baseField.builder(x))
