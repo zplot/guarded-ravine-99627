@@ -3,20 +3,24 @@ package models.algebra2
 
 
 
-object Permutation {
 
-  def apply(t: Set[Cycle]): Permutation = {
+
+object Prueba1 {
+
+  def apply(t: Set[Cycle]): Prueba1 = {
 
     println("t = " + t)
 
     val struc: List[Cycle] = t.filter(x => x.cycle.length > 1).toList
     println("aqui = " + struc)
 
-    new Permutation(struc)
+    new Prueba1(struc)
 
   }
 
-  def unapply(x: Permutation): Option[Set[Cycle]] = Some(x.struc.toSet)
+  def unapply(x: Prueba1): Option[Set[Cycle]] = Some(x.struc.toSet)
+
+
 
   def fromListOfCyclestoMap(lc: List[Cycle]): Map[Int, Int] = {
 
@@ -27,11 +31,11 @@ object Permutation {
     }
   }
 
-  val one = Permutation(Set(Cycle(List(1))))
+  val one = Prueba1(Set(Cycle(List(1))))
 
-  def generar(generadores: Set[Permutation]): Set[Permutation] = {
+  /*def generar(generadores: Set[Prueba1]): Set[Prueba1] = {
 
-    def bucleMultiple(listaAnterior: Set[Permutation], generadores: Set[Permutation]): Set[Permutation] = {
+    def bucleMultiple(listaAnterior: Set[Prueba1], generadores: Set[Prueba1]): Set[Prueba1] = {
 
       val listaNueva =
         for {
@@ -46,22 +50,27 @@ object Permutation {
     }
     val listaInicial = generadores + one
     bucleMultiple(listaInicial, generadores)
-  }
+  }*/
+
+
 
 }
 
-class Permutation(val struc: List[Cycle]) {
+class Prueba1(val struc: List[Cycle]) {
 
   val numCiclos: Int = struc.length
 
-  // TODO Aquí está el problema
-  println("struc = " + struc)
-  val cicloMasLargo: Int = struc.map(x => x.length).max
+  //val cicloMasLargo: Int = struc.map(x => x.length).max
 
-  val toMap: Map[Int, Int] = Permutation.fromListOfCyclestoMap(struc)
+  val tmp1: List[Int] = struc.map(x => x.length)
+  println("tmp1 = " + tmp1)
+  val tmp2: Int = tmp1.max
+  //val cicloMasLargo: Int = tmp2
+
+ // val toMap: Map[Int, Int] = Prueba1.fromListOfCyclestoMap(struc)
 
   // lowest canonical order
-  val lco: List[Cycle] = {
+ /* val lco: List[Cycle] = {
 
     def orden(cycle1: Cycle, cycle2: Cycle): Cycle = (cycle1.toList, cycle2.toList) match {
       case (List(), List()) => cycle1
@@ -79,23 +88,23 @@ class Permutation(val struc: List[Cycle]) {
 
   override def toString: String = if (lco == List()) "1" else "P" + lco.mkString("")
 
-  def inver: Permutation = {
+  def inver: Prueba1 = {
 
     if (cicloMasLargo < 2) Permutation.one
-      // El inverso de 1 es 1
-      val tmp1 = this.lco
-      val tmp2 = tmp1.map(x => x.cycle)
-      val tmp3 = tmp2.map(x => x.reverse)
-      val tmp4 = tmp3.map(x => Cycle(x))
-      val tmp5 = tmp4.toSet
-      Permutation(tmp5)
-    }
+    // El inverso de 1 es 1
+    val tmp1 = this.lco
+    val tmp2 = tmp1.map(x => x.cycle)
+    val tmp3 = tmp2.map(x => x.reverse)
+    val tmp4 = tmp3.map(x => Cycle(x))
+    val tmp5 = tmp4.toSet
+    Prueba1(tmp5)
+  }
 
-  def multiply(other: Permutation): Permutation = (this, other) match {
+  def multiply(other: Prueba1): Prueba1 = (this, other) match {
 
-    case (Permutation.one, Permutation.one) => Permutation.one
-    case (x, Permutation.one) => x
-    case (Permutation.one, x) => x
+    case (Prueba1.one, Prueba1.one) => Prueba1.one
+    case (x, Prueba1.one) => x
+    case (Prueba1.one, x) => x
     case (_, _) =>
 
       val izda: List[Cycle] = this.struc
@@ -128,7 +137,7 @@ class Permutation(val struc: List[Cycle]) {
 
       val resultado1 = extinguir(mapaProducto, seMueven, List())
       val resultado2 = resultado1.map(x => Cycle(x)).toSet
-      Permutation(resultado2)
+      Prueba1(resultado2)
   }
 
   override def equals(o: Any): Boolean = o match {
@@ -139,6 +148,8 @@ class Permutation(val struc: List[Cycle]) {
   }
 
   override def hashCode: Int = lco.hashCode
+*/
+
 
 }
 

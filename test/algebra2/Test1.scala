@@ -1,7 +1,4 @@
-package algebra2
-
-
-import models.algebra2._
+package models.algebra2
 
 
 object Test1 extends App {
@@ -18,8 +15,9 @@ object Test1 extends App {
   println(b)
   val c: Set[Cycle] = Set(b)
   println("c= " + c)
-  val d = Permutation(c)
-  println(d)
+  //val d = Prueba1(c)
+  val dd: Permutation = Permutation(c)
+  println(dd)
 
 
 }
