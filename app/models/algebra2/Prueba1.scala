@@ -11,7 +11,7 @@ object Prueba1 {
 
     println("t = " + t)
 
-    val struc: List[Cycle] = t.filter(x => x.cycle.length > 1).toList
+    val struc: List[Cycle] = List(Cycle(List(1,2,3)))
     println("aqui = " + struc)
 
     new Prueba1(struc)
@@ -22,16 +22,16 @@ object Prueba1 {
 
 
 
-  def fromListOfCyclestoMap(lc: List[Cycle]): Map[Int, Int] = {
+/*  def fromListOfCyclestoMap(lc: List[Cycle]): Map[Int, Int] = {
 
     lc match {
       case Nil => Map[Int, Int]()
       case x :: xs => x.toMap ++ fromListOfCyclestoMap(xs)
 
     }
-  }
+  }*/
 
-  val one = Prueba1(Set(Cycle(List(1))))
+  val one = new Prueba1(List(Cycle(List(1))))
 
   /*def generar(generadores: Set[Prueba1]): Set[Prueba1] = {
 

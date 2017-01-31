@@ -27,7 +27,7 @@ object Permutation {
     }
   }
 
-  val one = Permutation(Set(Cycle(List(1))))
+  val one = new Permutation(List(Cycle(List(1))))
 
   def generar(generadores: Set[Permutation]): Set[Permutation] = {
 

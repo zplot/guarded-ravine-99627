@@ -15,7 +15,7 @@ object Test1 extends App {
   println(b)
   val c: Set[Cycle] = Set(b)
   println("c= " + c)
-  //val d = Prueba1(c)
+  val d = Prueba1(c)
   val dd: Permutation = Permutation(c)
   println(dd)
 
