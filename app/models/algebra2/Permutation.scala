@@ -7,7 +7,8 @@ object Permutation {
 
   def apply(t: Set[Cycle]): Permutation = {
 
-    val struc: Set[Cycle] = t.filter(x => x.cycle.length > 1)
+    val struc: Set[Cycle] = if (t.filter(x => x.cycle.length > 1) == Set[Cycle]()) Set(Cycle(List(1))) else t.filter(x => x.cycle.length > 1)
+
 
     new Permutation(struc)
 
@@ -35,6 +36,7 @@ object Permutation {
           g <- listaAnterior
           s <- generadores
         } yield g.multiply(s)
+
       if (listaAnterior != listaNueva) {
         bucleMultiple(listaNueva ++ listaAnterior, generadores)
       } else {
@@ -50,8 +52,12 @@ object Permutation {
 class Permutation(val struc: Set[Cycle]) {
 
   val numCiclos: Int = struc.size
+  
+  //println("struc4 = " + struc.toList.map(x => x.length).max)
 
-  val cicloMasLargo: Int = struc.map(x => x.length).max
+  val cicloMasLargo: Int = if (struc == Set()) 0 else struc.toList.map(x => x.length).max
+
+
 
   val toMap: Map[Int, Int] = Permutation.fromListOfCyclestoMap(struc.toList)
 

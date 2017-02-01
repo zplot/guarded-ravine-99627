@@ -9,7 +9,7 @@ object FiniteGroupExamples {
   def C(n: Int): PermutationGroup = {
     if (n < 1) println("n es menor que 2: no vale")
     val g1 = Permutation(Set(Cycle((1 to n).toList)))
-    PermutationGroup(Set(g1), name = "Z" + n)
+    PermutationGroup(Set(g1), name = "C" + n)
   }
 
   /* Symetric group of n elements */
