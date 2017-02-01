@@ -15,11 +15,9 @@ class PermutationGroup private(generators: Set[Permutation], name: String) exten
   type T2 = PermutationGroupElement
 
   def builder(x: T1): T2 = PermutationGroupElement(x)
-  val structureId: String = "{" + "Permutation Group " + name + "}"
-
+  val structureId: String = "Permutation Group " + name
   val identity: PermutationGroupElement = builder(Permutation.one)
   val one: PermutationGroupElement = identity
-
   val groupId: String = if (name != "") name else "<" + generators.toString + ">"
   //val Permutation.one: T2 = identity
   val permutationSet: Set[Permutation] = Permutation.generar(generators)

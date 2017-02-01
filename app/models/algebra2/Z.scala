@@ -1,5 +1,7 @@
 package models.algebra2
 
+import scala.language.implicitConversions
+
 
 case object Z extends UFD {
 
@@ -7,8 +9,7 @@ case object Z extends UFD {
   type T2 = ZInteger
 
 
-
-  def builder(x: T1) = ZInteger(x)
+  implicit def builder(x: T1): T2 = ZInteger(x)
 
   val structureId: String = "Z"
   val finite = false

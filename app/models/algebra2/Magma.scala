@@ -20,7 +20,7 @@ trait Magma {
 
   val structureId: String
 
-  override def toString: String = structureId
+  override def toString: String = "{" + structureId + "}"
 
   trait MagmaElement {
 

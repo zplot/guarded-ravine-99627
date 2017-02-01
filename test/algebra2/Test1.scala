@@ -1,7 +1,12 @@
 package models.algebra2
 
 
+
+
 object Test1 extends App {
+
+
+  import scala.language.implicitConversions
 
 
 
@@ -10,13 +15,37 @@ object Test1 extends App {
   println("Empezamos")
 
 
-  val b = Cycle((1 to 5).toList)
+  val ring1 = Z
+  val polyRing = PolynomialOverRing(Z)
 
-  val c = Cycle(List(1,2))
 
-  val d: Set[Cycle] = Set(b,c)
-  val per: Permutation = Permutation(d)
-  println("per = " + per)
+
+  implicit def conv1(x: Int): polyRing.ring.T2 = ring1.builder(x).asInstanceOf[polyRing.ring.T2]
+
+
+
+
+
+
+
+
+
+
+
+
+  val map1: Map[Int, polyRing.ring.T2] = Map(2 -> 3, 3 -> 4, 8 -> 11, 7 -> 2)
+
+  val p1 = polyRing.builder(map1)
+
+  println("p1 = " + p1)
+
+
+
+
+
+
+
+
 
 
 }
