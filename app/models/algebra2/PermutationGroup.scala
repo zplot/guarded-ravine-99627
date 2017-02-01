@@ -2,15 +2,10 @@ package models.algebra2
 
 
 
-
-
-
 object PermutationGroup {
 
   def apply(generators: Set[Permutation], name: String) = new PermutationGroup(generators: Set[Permutation], name: String)
   def apply(generators: Set[Permutation]) = new PermutationGroup(generators: Set[Permutation], name = "")
-
-
 
 }
 
@@ -26,7 +21,7 @@ class PermutationGroup private(generators: Set[Permutation], name: String) exten
   val one: PermutationGroupElement = identity
 
   val groupId: String = if (name != "") name else "<" + generators.toString + ">"
-  val Permutation.one: T2 = identity
+  //val Permutation.one: T2 = identity
   val permutationSet: Set[Permutation] = Permutation.generar(generators)
   val elements: Set[T2] = permutationSet.map(x => builder(x))
 

@@ -1,7 +1,22 @@
-package scala
+package models.algebra2
 
-/**
-  * Created by luisfontes on 01/02/2017.
-  */
-class TestPermutation {
+
+object TestPermutation extends App {
+
+
+
+
+
+  println("Empezamos")
+
+
+  val b = Cycle((1 to 5).toList)
+
+  val c = Cycle(List(1,2))
+
+  val d: Set[Cycle] = Set(b,c)
+  val per: Permutation = Permutation(d)
+  println("per = " + per)
+
+
 }

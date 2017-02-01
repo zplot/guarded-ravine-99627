@@ -7,16 +7,13 @@ object Permutation {
 
   def apply(t: Set[Cycle]): Permutation = {
 
-    println("t = " + t)
-
-    val struc: List[Cycle] = t.filter(x => x.cycle.length > 1).toList
-    println("aqui = " + struc)
+    val struc: Set[Cycle] = t.filter(x => x.cycle.length > 1)
 
     new Permutation(struc)
 
   }
 
-  def unapply(x: Permutation): Option[Set[Cycle]] = Some(x.struc.toSet)
+  def unapply(x: Permutation): Option[Set[Cycle]] = Some(x.struc)
 
   def fromListOfCyclestoMap(lc: List[Cycle]): Map[Int, Int] = {
 
@@ -27,7 +24,7 @@ object Permutation {
     }
   }
 
-  val one = new Permutation(List(Cycle(List(1))))
+  val one = new Permutation(Set(Cycle(List(1))))
 
   def generar(generadores: Set[Permutation]): Set[Permutation] = {
 
@@ -50,15 +47,13 @@ object Permutation {
 
 }
 
-class Permutation(val struc: List[Cycle]) {
+class Permutation(val struc: Set[Cycle]) {
 
-  val numCiclos: Int = struc.length
+  val numCiclos: Int = struc.size
 
-  // TODO Aquí está el problema
-  println("struc = " + struc)
   val cicloMasLargo: Int = struc.map(x => x.length).max
 
-  val toMap: Map[Int, Int] = Permutation.fromListOfCyclestoMap(struc)
+  val toMap: Map[Int, Int] = Permutation.fromListOfCyclestoMap(struc.toList)
 
   // lowest canonical order
   val lco: List[Cycle] = {
@@ -74,10 +69,11 @@ class Permutation(val struc: List[Cycle]) {
       case _ => cycle1
 
     }
-    struc.sortWith((cycle1, cycle2) => orden(cycle1, cycle2) == cycle1)
+    // TODO Esto va mal
+    struc.toList.sortWith((cycle1, cycle2) => orden(cycle1, cycle2) == cycle1)
   }
 
-  override def toString: String = if (lco == List()) "1" else "P" + lco.mkString("")
+  override def toString: String = if (lco == List()) "1" else "P[" + lco.mkString("") + "]"
 
   def inver: Permutation = {
 
@@ -98,8 +94,8 @@ class Permutation(val struc: List[Cycle]) {
     case (Permutation.one, x) => x
     case (_, _) =>
 
-      val izda: List[Cycle] = this.struc
-      val dcha: List[Cycle] = other.struc
+      val izda: List[Cycle] = this.struc.toList
+      val dcha: List[Cycle] = other.struc.toList
       val tmp1: List[Cycle] = izda ++ dcha
       val seMueven: List[Int] = tmp1.flatMap(x => x.cycle).distinct.sorted
       val mapaProducto: Map[Int, Int] =

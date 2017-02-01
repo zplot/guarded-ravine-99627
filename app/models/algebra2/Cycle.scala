@@ -49,7 +49,7 @@ case class Cycle(cycle: List[Int]) {
     else normal.cycle == that.normal.cycle
   }
 
-  override def toString: String = "Cycle(" + normal.cycle.mkString(" ") + ")"
+  override def toString: String = "(" + normal.cycle.mkString(" ") + ")"
 
 }
 
