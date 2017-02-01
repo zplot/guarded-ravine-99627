@@ -9,6 +9,9 @@ object TestFiniteGroups extends App {
 
   println()
 
-  val grupo = S(3)
-  println(grupo.cardinal)
+  val grupo = DirectProduct(S(4), Q8)
+  println(grupo)
+
+  val grupo2 = S(7)
+  println(grupo2)
 }

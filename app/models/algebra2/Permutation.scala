@@ -52,7 +52,7 @@ object Permutation {
 class Permutation(val struc: Set[Cycle]) {
 
   val numCiclos: Int = struc.size
-  
+
   //println("struc4 = " + struc.toList.map(x => x.length).max)
 
   val cicloMasLargo: Int = if (struc == Set()) 0 else struc.toList.map(x => x.length).max
