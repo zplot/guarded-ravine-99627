@@ -17,6 +17,8 @@ object Test1 extends App {
 
   val ring1 = Z
   val polyRing = PolynomialOverRing(Z)
+  val polyRing2 = PolynomialOverRing(polyRing)
+  println(polyRing2)
 
 
 
@@ -37,7 +39,7 @@ object Test1 extends App {
 
   val p1 = polyRing.builder(map1)
 
-  println("p1 = " + p1)
+  println("p1 = " + p1 * p1)
 
 
 

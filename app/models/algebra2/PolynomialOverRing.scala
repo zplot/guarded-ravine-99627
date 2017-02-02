@@ -1,5 +1,7 @@
 package models.algebra2
 
+import scala.language.implicitConversions
+
 
 
 object PolynomialOverRing {
@@ -15,7 +17,15 @@ class PolynomialOverRing private(val ring: Ring) extends Ring {
   type T2 = Polynomial
 
 
+
+
   def builder(x: T1) = Polynomial(x)
+
+  // TODO
+  implicit def conversor(s:String): Polynomial = {
+
+    zero
+  }
 
   val structureId: String = "Polynomials Over " + ring.structureId
 
