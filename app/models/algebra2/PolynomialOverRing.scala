@@ -9,6 +9,10 @@ object PolynomialOverRing {
   def apply(ring: Ring): PolynomialOverRing = {
     new PolynomialOverRing(ring)
   }
+
+  implicit def conv1(x: PolynomialOverRing.T1): PolynomialOverRing.T1 = "B: %d" format b.m
+
+
 }
 
 class PolynomialOverRing private(val ring: Ring) extends Ring {
@@ -19,7 +23,9 @@ class PolynomialOverRing private(val ring: Ring) extends Ring {
 
 
 
-  def builder(x: T1) = Polynomial(x)
+
+
+  def builder(x: T1): Polynomial = Polynomial(x)
 
   // TODO
   implicit def conversor(s:String): Polynomial = {

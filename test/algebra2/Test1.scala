@@ -21,7 +21,7 @@ object Test1 extends App {
   println(polyRing2)
 
 
-
+  // Convierte un Int en un elemento del anillo
   implicit def conv1(x: Int): polyRing.ring.T2 = ring1.builder(x).asInstanceOf[polyRing.ring.T2]
 
 
@@ -30,7 +30,7 @@ object Test1 extends App {
 
 
 
-
+  import Z.conversor1
 
 
 

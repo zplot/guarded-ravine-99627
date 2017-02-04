@@ -14,9 +14,9 @@ case object Z extends UFD {
   def builder(x: T1): T2 = ZInteger(x)
 
 
-  implicit def conversor(s:String): ZInteger = {
-    builder(s.toInt)
-  }
+  implicit def conversor1(x: Int): ZInteger = builder(x)
+  implicit def conversor2(s: String): ZInteger = builder(s.toInt)
+
 
   val structureId: String = "Z"
   val finite = false
